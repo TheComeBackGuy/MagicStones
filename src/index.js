@@ -1,3 +1,4 @@
+//Main class
 class MagicStone {
   constructor(name, strength, powerLevel, color, size) {
     this._name = name;
@@ -20,6 +21,14 @@ class MagicStone {
   }
 }
 
+////////////////////////////////////\WINDOW  LISTENER
+//hadn't gotten far enough to assign it directly to the button
+//with a case of thing. That was going to be the next step
+//after the charge
+window.addEventListener("click", useStone);
+
+//////////////////////////////////\GLOBAL VARIABLES & CLASSES
+//simply creating a couple instances of the class
 let powerStone = new MagicStone("Power Stone", 100, 100, "Red", "large");
 let earthStone = new MagicStone("Earth Stone", 75, 100, "Green", "Large");
 let elementalStone = new MagicStone(
@@ -32,11 +41,13 @@ let elementalStone = new MagicStone(
 let mindStone = new MagicStone("Magic Stone", 65, 100, "Magenta", "Small");
 
 //assigning variables to make things easier
+// next step for me is to make buttons for each stone and replace TargetStone Value
 let targetStone = earthStone;
 let stonePower = targetStone._powerLevel;
 let isCharging = false;
-/////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 
+//////////////////////////////\TAKING ACTION
 ///initial page load text value;
 document.getElementById(
   "powerPercent"
@@ -47,9 +58,9 @@ document.getElementById(
 -decreases stonePower by 10
 -logs it
 -I used a boolean thinking it would act as a lightswitch.
-  The problem is, It works as long as you don't press the button
+  It works as long as you don't press the button
   while it's already charging. I needed to tell the button not to create another 
-  instance of a charger while it's charging. I'm stumped on why it's not working.
+  instance of a charger while it's charging. I'm stumped on why the boolean is not working.
 */
 function useStone() {
   stonePower -= 10;
@@ -80,19 +91,10 @@ function chargeIt() {
     let isCharging = true;
     console.log(isCharging);
     if (stonePower === 100) {
-      console.log(`Suck it!`); //test to be sure the 'if' was working
+      console.log(`Suck it!`); //test to be sure this 'if' was working
       let isCharging = false;
       console.log(isCharging);
       clearInterval(charging);
     }
   }, 1000);
 }
-// myFunction();
-
-// myFunction();
-//single windowListener
-//hadn't gotten far enough to assign it directly to the button
-//with a case of thing. That was going to be the next step
-//after the charge
-
-window.addEventListener("click", useStone);
