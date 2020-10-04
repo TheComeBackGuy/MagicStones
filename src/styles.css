@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+}
+
+.doTheMagic {
+  background-color: rgb(96, 221, 96);
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.doTheMagic:hover {
+  background-color: rgb(158, 231, 158);
+}
